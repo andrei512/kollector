@@ -22,6 +22,9 @@ typedef id(^StashBlock)(void);
 
 + (NSMutableDictionary *)stashWithName:(NSString *)name;
 
++ (NSString *)className;
+- (NSString *)className;
+
 + (NSDictionary *)config;
 + (id)$:(NSString *)key;
 - (id)$:(NSString *)key;

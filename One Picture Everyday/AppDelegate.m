@@ -7,22 +7,18 @@
 //
 
 #import "AppDelegate.h"
-#import "NSObject+APFramework.h"
-#import "APModel.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    APViewController *viewController = [APViewController viewController];
+    
+    self.viewController = viewController;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    // Override point for customization after application launch.
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        self.viewController = [[APViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
-//    } else {
-//        self.viewController = [[APViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
-//    }
-//    self.window.rootViewController = self.viewController;
-//    [self.window makeKeyAndVisible];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

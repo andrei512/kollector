@@ -16,6 +16,9 @@ typedef void(^APDialogCallback)(int index);
 
 @property (nonatomic, strong) NSMutableArray *controllers;
 
+// create new APViewController instance with interface file if found
++ (instancetype)viewController;
+
 - (void)addController:(APController *)controller;
 - (void)removeController:(APController *)controller;
 

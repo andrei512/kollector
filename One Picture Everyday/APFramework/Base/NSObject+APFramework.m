@@ -15,6 +15,10 @@
     return NSStringFromClass([self class]);
 }
 
+- (NSString *)className {
+    return NSStringFromClass([self class]);
+}
+
 + (instancetype)sharedInstance {
     static NSMutableDictionary *singletonStash = nil;
     static dispatch_once_t onceToken;
