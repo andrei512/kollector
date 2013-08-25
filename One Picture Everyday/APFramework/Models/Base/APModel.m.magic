@@ -1,0 +1,8 @@
+puts <<-EOF
+- (id)init {
+    if (self = [super init]) {
+        NSLog(@"Yey !");
+    }
+    return self;
+}
+EOF

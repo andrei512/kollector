@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CDAlert" representedClassName="CDAlert" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="cron" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fireDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="repeats" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="CDCollection" representedClassName="CDCollection" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="entries" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDEntry" inverseName="owner" inverseEntity="CDEntry" syncable="YES"/>
+    </entity>
+    <entity name="CDEntry" representedClassName="CDEntry" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="extraInformation" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDCollection" inverseName="entries" inverseEntity="CDCollection" syncable="YES"/>
+        <relationship name="picture" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDPicture" inverseName="owner" inverseEntity="CDPicture" syncable="YES"/>
+    </entity>
+    <entity name="CDPicture" representedClassName="CDPicture" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="owner" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CDEntry" inverseName="picture" inverseEntity="CDEntry" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDPicture" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="CDEntry" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="CDCollection" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="CDAlert" positionX="160" positionY="192" width="128" height="120"/>
+    </elements>
+</model>
