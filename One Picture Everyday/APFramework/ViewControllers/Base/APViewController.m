@@ -52,7 +52,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.controllers = [NSMutableArray array];
     }
     return self;
 }
@@ -68,5 +68,52 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Controllers And Tranzition
+
+- (void)addController:(APController *)controller {
+    [self addController:controller animated:NO];
+}
+
+- (void)removeController:(APController *)controller {
+    [self removeController:controller animated:NO];
+}
+
+- (void)addController:(APController *)controller animated:(BOOL)animated {
+    if (animated) {
+        [self addController:controller
+             withTranzition:[APControllerTranzition FadeTranzition]];
+    } else {
+        [self addController:controller
+             withTranzition:[APControllerTranzition NonAnimatedTranzition]];
+    }
+}
+
+- (void)removeController:(APController *)controller animated:(BOOL)animated {
+    if (animated) {
+        [self removeController:controller
+             withTranzition:[APControllerTranzition FadeTranzition]];
+    } else {
+        [self removeController:controller
+             withTranzition:[APControllerTranzition NonAnimatedTranzition]];
+    }    
+}
+
+- (void)addController:(APController *)controller withTranzition:(APControllerTranzition *)tranzition {
+    [self.controllers addObject:controller];
+    controller.viewController = self;
+
+    [tranzition add:controller to:self];
+}
+
+- (void)removeController:(APController *)controller withTranzition:(APControllerTranzition *)tranzition {
+    controller.viewController = nil;
+    [self.controllers removeObject:controller];
+
+    [tranzition remove:controller from:self];
+}
+
+
+
 
 @end

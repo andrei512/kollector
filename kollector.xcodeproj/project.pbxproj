@@ -32,6 +32,9 @@
 		75D50C8017CA4140007A5D2B /* CDCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C7F17CA4140007A5D2B /* CDCollection.m */; };
 		75D50C8317CA4142007A5D2B /* CDAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C8217CA4141007A5D2B /* CDAlert.m */; };
 		75D50C8617CA4142007A5D2B /* CDEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C8517CA4142007A5D2B /* CDEntry.m */; };
+		75D50C8917CA4A0C007A5D2B /* APTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C8817CA4A0C007A5D2B /* APTableViewCellViewModel.m */; };
+		75D50C8C17CA4A23007A5D2B /* APTableSectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C8B17CA4A23007A5D2B /* APTableSectionViewModel.m */; };
+		75D50C8E17CA6FE5007A5D2B /* APTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D50C8D17CA6FE5007A5D2B /* APTableViewController.xib */; };
 		75F1C9C217C53062003898A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F1C9C117C53062003898A1 /* UIKit.framework */; };
 		75F1C9C417C53062003898A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F1C9C317C53062003898A1 /* Foundation.framework */; };
 		75F1C9C617C53062003898A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F1C9C517C53062003898A1 /* CoreGraphics.framework */; };
@@ -89,6 +92,11 @@
 		75D50C8217CA4141007A5D2B /* CDAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAlert.m; sourceTree = "<group>"; };
 		75D50C8417CA4142007A5D2B /* CDEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEntry.h; sourceTree = "<group>"; };
 		75D50C8517CA4142007A5D2B /* CDEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEntry.m; sourceTree = "<group>"; };
+		75D50C8717CA4A0C007A5D2B /* APTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableViewCellViewModel.h; sourceTree = "<group>"; };
+		75D50C8817CA4A0C007A5D2B /* APTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableViewCellViewModel.m; sourceTree = "<group>"; };
+		75D50C8A17CA4A23007A5D2B /* APTableSectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableSectionViewModel.h; sourceTree = "<group>"; };
+		75D50C8B17CA4A23007A5D2B /* APTableSectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableSectionViewModel.m; sourceTree = "<group>"; };
+		75D50C8D17CA6FE5007A5D2B /* APTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APTableViewController.xib; sourceTree = "<group>"; };
 		75F1C9BE17C53062003898A1 /* kollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F1C9C117C53062003898A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		75F1C9C317C53062003898A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -374,6 +382,7 @@
 			children = (
 				75D50C4F17C806F6007A5D2B /* APTableViewController.h */,
 				75D50C5017C806F6007A5D2B /* APTableViewController.m */,
+				75D50C8D17CA6FE5007A5D2B /* APTableViewController.xib */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -390,6 +399,10 @@
 		75D50C5317C80740007A5D2B /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				75D50C8717CA4A0C007A5D2B /* APTableViewCellViewModel.h */,
+				75D50C8817CA4A0C007A5D2B /* APTableViewCellViewModel.m */,
+				75D50C8A17CA4A23007A5D2B /* APTableSectionViewModel.h */,
+				75D50C8B17CA4A23007A5D2B /* APTableSectionViewModel.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -594,6 +607,7 @@
 				75D50C5F17C81BAE007A5D2B /* APViewController_iPad.xib in Resources */,
 				75D50C6017C81BAE007A5D2B /* APViewController_iPhone.xib in Resources */,
 				75D50C7117C955ED007A5D2B /* APModel.m.magic in Resources */,
+				75D50C8E17CA6FE5007A5D2B /* APTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +671,8 @@
 				75D50C8017CA4140007A5D2B /* CDCollection.m in Sources */,
 				75D50C8317CA4142007A5D2B /* CDAlert.m in Sources */,
 				75D50C8617CA4142007A5D2B /* CDEntry.m in Sources */,
+				75D50C8917CA4A0C007A5D2B /* APTableViewCellViewModel.m in Sources */,
+				75D50C8C17CA4A23007A5D2B /* APTableSectionViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

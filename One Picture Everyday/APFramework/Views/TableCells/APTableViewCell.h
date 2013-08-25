@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APTableViewCellViewModel.h"
 
 @interface APTableViewCell : UITableViewCell
+
 
 @end

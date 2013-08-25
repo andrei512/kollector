@@ -12,15 +12,25 @@
 #define METHOD_SCOPE
 #define FILE_SCOPE
 
-
+typedef NSString *(^KeyBlock)(NSString *key);
 
 typedef id(^StashBlock)(void);
 
 @interface NSObject (APFramework)
 
+- (KeyBlock)instanceKey;
+- (KeyBlock)classKey;
+
++ (KeyBlock)classKey;
+
 + (instancetype)sharedInstance;
 
-+ (NSMutableDictionary *)stashWithName:(NSString *)name;
++ (NSMutableDictionary *)globalStashWithKey:(NSString *)key;
++ (NSMutableDictionary *)classStashWithKey:(NSString *)key;
+
+- (NSMutableDictionary *)globalStashWithKey:(NSString *)key;
+- (NSMutableDictionary *)classStashWithKey:(NSString *)key;
+- (NSMutableDictionary *)instanceStashWithKey:(NSString *)key;
 
 + (NSString *)className;
 - (NSString *)className;
@@ -29,5 +39,7 @@ typedef id(^StashBlock)(void);
 + (id)$:(NSString *)key;
 - (id)$:(NSString *)key;
 
++ (id)load:(StashBlock)block forKey:(NSString *)key;
+- (id)load:(StashBlock)block forKey:(NSString *)key;
 
 @end

@@ -6,8 +6,18 @@
 //  Copyright (c) 2013 Andrei. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@class APViewController;
 
 @interface APController : NSObject
+
+@property (nonatomic, weak) APViewController *viewController;
+
+// main view for controller
+@property (nonatomic, weak) IBOutlet UIView *view;
+
++ (instancetype)controller;
++ (instancetype)controllerForViewController:(APViewController *)viewController;
 
 @end

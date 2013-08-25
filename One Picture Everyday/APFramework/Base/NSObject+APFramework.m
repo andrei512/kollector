@@ -31,24 +31,48 @@
     return singletonStash[self.className];
 }
 
-+ (NSMutableDictionary *)stashWithName:(NSString *)name {
++ (NSMutableDictionary *)stashWithKey:(NSString *)name {
     static NSMutableDictionary *metaStash = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         metaStash = [NSMutableDictionary dictionary];
     });
-    NSString *className = NSStringFromClass([self class]);
-    if (metaStash[className] == nil) {
-        metaStash[className] = [self new];
-    }
-    return metaStash[className];
+    if (metaStash[name] == nil) {
+        metaStash[name] = [NSMutableDictionary dictionary];
+    }    
+    return metaStash[name];
 }
 
++ (NSMutableDictionary *)globalStashWithKey:(NSString *)key {
+    return [self stashWithKey:key];
+}
+
++ (NSMutableDictionary *)classStashWithKey:(NSString *)key {
+    return [self stashWithKey:[NSString stringWithFormat:@"%@.%@", self.className, key]];
+}
+
+- (NSMutableDictionary *)globalStashWithKey:(NSString *)key {
+    return [[self class] globalStashWithKey:key];
+}
+
+- (NSMutableDictionary *)classStashWithKey:(NSString *)key {
+    return [[self class] classStashWithKey:key];
+}
+
+- (NSMutableDictionary *)instanceStashWithKey:(NSString *)key {
+    return [[self class] stashWithKey:[NSString stringWithFormat:@"%d.%@", (int)self, key]];
+}
+
+#define kLoadStashBlock @"kLoadStashBlock"
 + (id)load:(StashBlock)block forKey:(NSString *)key {
-    if ([self stashWithName:key][self.className]) {
-        
+    if ([self stashWithKey:key][kLoadStashBlock] == nil) {
+        [self stashWithKey:key][kLoadStashBlock] = block();
     }
-    return nil;
+    return [self stashWithKey:key];
+}
+
+- (id)load:(StashBlock)block forKey:(NSString *)key {
+    return [[self class] load:block forKey:key];
 }
 
 + (NSDictionary *)config {
@@ -64,6 +88,29 @@
 
 - (id)$:(NSString *)key {
     return [[self class] $:key];
+}
+
+#pragma mark - Keys
+
+- (KeyBlock)instanceKey {
+    __block NSObject *selfb = self;
+    return ^(NSString *key) {
+        return [NSString stringWithFormat:@"%d.%@", (int)selfb, key];
+    };
+}
+
+- (KeyBlock)classKey {
+    __block NSObject *selfb = self;
+    return ^(NSString *key) {
+        return [NSString stringWithFormat:@"%@.%@", selfb.className, key];
+    };
+}
+
++ (KeyBlock)classKey {
+    __block NSString *className = self.className;
+    return ^(NSString *key) {
+        return [NSString stringWithFormat:@"%@.%@", className, key];
+    };
 }
 
 

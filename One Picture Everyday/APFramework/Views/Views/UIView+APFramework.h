@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APViewModel.h"
 
 @interface UIView (APFramework)
+
+- (void)loadViewModel:(APViewModel *)viewModel;
 
 @end

@@ -10,4 +10,8 @@
 
 @implementation UIView (APFramework)
 
+- (void)loadViewModel:(APViewModel *)viewModel {
+    
+}
+
 @end
