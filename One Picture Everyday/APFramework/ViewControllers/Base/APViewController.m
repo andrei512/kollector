@@ -39,10 +39,10 @@
     
     APViewController *viewController = nil;
     if (nibPath != nil) {
-        viewController = [[APViewController alloc] initWithNibName:nibName bundle:nil];
+        viewController = [[self alloc] initWithNibName:nibName bundle:nil];
     } else {
         NSLog(@"did not found nib named %@ for %@", nibName, self.className);
-        viewController = [[APViewController alloc] initWithNibName:nil bundle:nil];
+        viewController = [[self alloc] initWithNibName:nil bundle:nil];
     }
     
     return viewController;

@@ -7,18 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "APTableViewController.h"
+#import "PicturesViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    APViewController *viewController = [APViewController viewController];
-    APTableViewController *tableController =
-        [APTableViewController controllerForViewController:viewController];
-    [viewController addController:tableController animated:YES];
-    
+    APViewController *viewController = [PicturesViewController viewController];
     
     self.viewController = viewController;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

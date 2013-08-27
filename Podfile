@@ -5,4 +5,6 @@ pod 'MagicalRecord'
 pod 'MBProgressHUD'
 pod 'Dropbox-iOS-SDK'
 pod 'CorePlot'
-
+pod 'JASidePanels'
+pod 'SDWebImage'
+pod 'LoremIpsum'

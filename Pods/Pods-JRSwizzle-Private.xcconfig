@@ -1,5 +1,5 @@
 #include "Pods-JRSwizzle.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/JRSwizzle" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/APUtils" "${PODS_ROOT}/Headers/CorePlot" "${PODS_ROOT}/Headers/Dropbox-iOS-SDK" "${PODS_ROOT}/Headers/JRSwizzle" "${PODS_ROOT}/Headers/MAObjCRuntime" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/MagicalRecord" "${PODS_ROOT}/Headers/ReactiveCocoa" "${PODS_ROOT}/Headers/libextobjc"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/JRSwizzle" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/APUtils" "${PODS_ROOT}/Headers/CorePlot" "${PODS_ROOT}/Headers/Dropbox-iOS-SDK" "${PODS_ROOT}/Headers/JASidePanels" "${PODS_ROOT}/Headers/JRSwizzle" "${PODS_ROOT}/Headers/LoremIpsum" "${PODS_ROOT}/Headers/MAObjCRuntime" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/MagicalRecord" "${PODS_ROOT}/Headers/ReactiveCocoa" "${PODS_ROOT}/Headers/SDWebImage" "${PODS_ROOT}/Headers/libextobjc" "${PODS_ROOT}/Headers/libwebp" "${PODS_ROOT}/Headers/libwebp/webp"
 OTHER_LDFLAGS = -ObjC ${PODS_JRSWIZZLE_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}

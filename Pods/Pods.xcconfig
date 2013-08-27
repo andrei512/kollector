@@ -1,5 +1,5 @@
 FRAMEWORK_SEARCH_PATHS = "${PODS_ROOT}/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.5"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/APUtils" "${PODS_ROOT}/Headers/CorePlot" "${PODS_ROOT}/Headers/Dropbox-iOS-SDK" "${PODS_ROOT}/Headers/JRSwizzle" "${PODS_ROOT}/Headers/MAObjCRuntime" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/MagicalRecord" "${PODS_ROOT}/Headers/ReactiveCocoa" "${PODS_ROOT}/Headers/libextobjc"
-OTHER_LDFLAGS = -ObjC -framework CoreData -framework CoreGraphics -framework DropboxSDK -framework Foundation -framework QuartzCore -framework Security
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/APUtils" "${PODS_ROOT}/Headers/CorePlot" "${PODS_ROOT}/Headers/Dropbox-iOS-SDK" "${PODS_ROOT}/Headers/JASidePanels" "${PODS_ROOT}/Headers/JRSwizzle" "${PODS_ROOT}/Headers/LoremIpsum" "${PODS_ROOT}/Headers/MAObjCRuntime" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/MagicalRecord" "${PODS_ROOT}/Headers/ReactiveCocoa" "${PODS_ROOT}/Headers/SDWebImage" "${PODS_ROOT}/Headers/libextobjc" "${PODS_ROOT}/Headers/libwebp" "${PODS_ROOT}/Headers/libwebp/webp"
+OTHER_LDFLAGS = -ObjC -framework CoreData -framework CoreGraphics -framework DropboxSDK -framework Foundation -framework ImageIO -framework MapKit -framework QuartzCore -framework Security
 PODS_ROOT = ${SRCROOT}/Pods
