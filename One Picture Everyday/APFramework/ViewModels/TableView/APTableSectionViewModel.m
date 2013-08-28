@@ -22,4 +22,23 @@
     return self.cells.count;
 }
 
+- (void)normalizeData {
+    // TO DO : figure out how to optimize this code
+    self.cells = [self.cells map:^id(id cell) {
+        if ([cell isKindOfClass:[APTableCellViewModel class]] == YES) {
+            return cell;
+        } else {
+            APTableCellViewModel *objectCellModel = [APTableCellViewModel cellModel];
+            
+            NSObject *object = cell;
+            
+            objectCellModel.onLoad = ^(APTableCell *cell) {
+                cell.textLabel.text = [NSString stringWithFormat:@"%@", object];
+            };
+            
+            return objectCellModel;
+        }
+    }];
+}
+
 @end

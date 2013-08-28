@@ -17,5 +17,6 @@
 
 - (int)numberOfCells;
 
+- (void)normalizeData;
 
 @end

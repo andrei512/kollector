@@ -10,7 +10,10 @@
 
 @implementation APTableViewController
 
+
 - (void)realoadTableView {
+    [self normalizeData];
+    
     NSMutableSet *cellNibNames = [NSMutableSet set];
     for (APTableSectionViewModel *section in self.sections) {
         for (APTableCellViewModel *cell in section.cells) {
@@ -44,6 +47,32 @@
     APTableSectionViewModel *section = self.sections[indexPath.section];
     return section.cells[indexPath.row];
 }
+
+#pragma mark - Magic
+
+- (void)normalizeData {
+    // TO DO: figure out how to run this code just once or smth..
+    self.sections = [self.sections map:^id(id section) {
+        if ([section isKindOfClass:[APTableSectionViewModel class]] == YES) {
+            // is real section model
+            APTableSectionViewModel *normalSection = section;
+            [normalSection normalizeData];
+            return normalSection;
+        } else if ([section isKindOfClass:[NSArray class]] == YES){
+            // is in fact a array of unnormalized data
+            APTableSectionViewModel *arraySection = [APTableSectionViewModel sectionWithCells:(NSArray *)section];
+            [arraySection normalizeData];
+            return arraySection;
+        } else {
+            // ignore the fact that you don't have a section model or an array of cellModels
+            // and just make a Section with one cell containing the object
+            APTableSectionViewModel *wierdSection = [APTableSectionViewModel sectionWithCells:@[section]];
+            [wierdSection normalizeData];
+            return wierdSection;
+        }
+    }];
+}
+
 
 #pragma mark - UITableViewDataSource
 
