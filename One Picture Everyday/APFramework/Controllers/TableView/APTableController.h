@@ -11,7 +11,7 @@
 #import "APTableCellViewModel.h"
 #import "APTableCell.h"
 
-@interface APTableViewController : APController <UITableViewDelegate, UITableViewDataSource>
+@interface APTableController : APController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *sections;

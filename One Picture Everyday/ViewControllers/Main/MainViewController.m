@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#import "APTableViewController.h"
+#import "APTableController.h"
 
 @interface MainViewController ()
 
@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    APTableViewController *tableController = [APTableViewController controllerForViewController:self];
+    APTableController *tableController = [APTableController controllerForViewController:self];
     
     NSMutableArray *cellModels = [NSMutableArray array];
     
@@ -39,6 +39,7 @@
     }
     
     tableController.sections = @[[APTableSectionViewModel sectionWithCells:cellModels]];
+    tableController.sections = @[@"ana", @"are", @"mere"];
     
     [self addController:tableController];
     

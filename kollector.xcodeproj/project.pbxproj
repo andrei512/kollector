@@ -17,7 +17,7 @@
 		75D50C4617C80640007A5D2B /* APModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C4517C80640007A5D2B /* APModel.m */; };
 		75D50C4917C80662007A5D2B /* APController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C4817C80662007A5D2B /* APController.m */; };
 		75D50C4E17C806E7007A5D2B /* APCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C4D17C806E7007A5D2B /* APCollectionViewController.m */; };
-		75D50C5117C806F6007A5D2B /* APTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C5017C806F6007A5D2B /* APTableViewController.m */; };
+		75D50C5117C806F6007A5D2B /* APTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C5017C806F6007A5D2B /* APTableController.m */; };
 		75D50C5617C80782007A5D2B /* APCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C5517C80782007A5D2B /* APCollectionViewModel.m */; };
 		75D50C5917C80A0F007A5D2B /* APFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C5817C80A0E007A5D2B /* APFramework.m */; };
 		75D50C5C17C81583007A5D2B /* APCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C5B17C81583007A5D2B /* APCollectionViewCell.m */; };
@@ -34,7 +34,7 @@
 		75D50C8617CA4142007A5D2B /* CDEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C8517CA4142007A5D2B /* CDEntry.m */; };
 		75D50C8917CA4A0C007A5D2B /* APTableCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C8817CA4A0C007A5D2B /* APTableCellViewModel.m */; };
 		75D50C8C17CA4A23007A5D2B /* APTableSectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C8B17CA4A23007A5D2B /* APTableSectionViewModel.m */; };
-		75D50C8E17CA6FE5007A5D2B /* APTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D50C8D17CA6FE5007A5D2B /* APTableViewController.xib */; };
+		75D50C8E17CA6FE5007A5D2B /* APTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D50C8D17CA6FE5007A5D2B /* APTableController.xib */; };
 		75DC96F617CD2DAA00C28339 /* PicturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DC96F417CD2DAA00C28339 /* PicturesViewController.m */; };
 		75DC96F717CD2DAA00C28339 /* PicturesViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DC96F517CD2DAA00C28339 /* PicturesViewController_iPad.xib */; };
 		75DC96FB17CD309600C28339 /* PictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DC96FA17CD309600C28339 /* PictureCollectionViewCell.m */; };
@@ -79,8 +79,8 @@
 		75D50C4817C80662007A5D2B /* APController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APController.m; sourceTree = "<group>"; };
 		75D50C4C17C806E7007A5D2B /* APCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCollectionViewController.h; sourceTree = "<group>"; };
 		75D50C4D17C806E7007A5D2B /* APCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCollectionViewController.m; sourceTree = "<group>"; };
-		75D50C4F17C806F6007A5D2B /* APTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableViewController.h; sourceTree = "<group>"; };
-		75D50C5017C806F6007A5D2B /* APTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableViewController.m; sourceTree = "<group>"; };
+		75D50C4F17C806F6007A5D2B /* APTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableController.h; sourceTree = "<group>"; };
+		75D50C5017C806F6007A5D2B /* APTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableController.m; sourceTree = "<group>"; };
 		75D50C5417C80782007A5D2B /* APCollectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCollectionViewModel.h; sourceTree = "<group>"; };
 		75D50C5517C80782007A5D2B /* APCollectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCollectionViewModel.m; sourceTree = "<group>"; };
 		75D50C5717C80A0E007A5D2B /* APFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APFramework.h; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		75D50C8817CA4A0C007A5D2B /* APTableCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableCellViewModel.m; sourceTree = "<group>"; };
 		75D50C8A17CA4A23007A5D2B /* APTableSectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTableSectionViewModel.h; sourceTree = "<group>"; };
 		75D50C8B17CA4A23007A5D2B /* APTableSectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTableSectionViewModel.m; sourceTree = "<group>"; };
-		75D50C8D17CA6FE5007A5D2B /* APTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APTableViewController.xib; sourceTree = "<group>"; };
+		75D50C8D17CA6FE5007A5D2B /* APTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APTableController.xib; sourceTree = "<group>"; };
 		75DC96F317CD2DAA00C28339 /* PicturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturesViewController.h; sourceTree = "<group>"; };
 		75DC96F417CD2DAA00C28339 /* PicturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturesViewController.m; sourceTree = "<group>"; };
 		75DC96F517CD2DAA00C28339 /* PicturesViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicturesViewController_iPad.xib; sourceTree = "<group>"; };
@@ -416,9 +416,9 @@
 		75D50C4B17C806CE007A5D2B /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				75D50C4F17C806F6007A5D2B /* APTableViewController.h */,
-				75D50C5017C806F6007A5D2B /* APTableViewController.m */,
-				75D50C8D17CA6FE5007A5D2B /* APTableViewController.xib */,
+				75D50C4F17C806F6007A5D2B /* APTableController.h */,
+				75D50C5017C806F6007A5D2B /* APTableController.m */,
+				75D50C8D17CA6FE5007A5D2B /* APTableController.xib */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -680,7 +680,7 @@
 				75D50C5F17C81BAE007A5D2B /* APViewController_iPad.xib in Resources */,
 				75D50C6017C81BAE007A5D2B /* APViewController_iPhone.xib in Resources */,
 				75D50C7117C955ED007A5D2B /* APModel.m.magic in Resources */,
-				75D50C8E17CA6FE5007A5D2B /* APTableViewController.xib in Resources */,
+				75D50C8E17CA6FE5007A5D2B /* APTableController.xib in Resources */,
 				75DC96F717CD2DAA00C28339 /* PicturesViewController_iPad.xib in Resources */,
 				75DC96FD17CD30AA00C28339 /* PictureCollectionViewCell.xib in Resources */,
 				75DC970017CD366500C28339 /* loading.png in Resources */,
@@ -739,7 +739,7 @@
 				75D50C4617C80640007A5D2B /* APModel.m in Sources */,
 				75D50C4917C80662007A5D2B /* APController.m in Sources */,
 				75D50C4E17C806E7007A5D2B /* APCollectionViewController.m in Sources */,
-				75D50C5117C806F6007A5D2B /* APTableViewController.m in Sources */,
+				75D50C5117C806F6007A5D2B /* APTableController.m in Sources */,
 				75D50C5617C80782007A5D2B /* APCollectionViewModel.m in Sources */,
 				75D50C5917C80A0F007A5D2B /* APFramework.m in Sources */,
 				75D50C5C17C81583007A5D2B /* APCollectionViewCell.m in Sources */,

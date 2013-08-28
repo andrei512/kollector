@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Andrei. All rights reserved.
 //
 
-#import "APTableViewController.h"
+#import "APTableController.h"
 
-@implementation APTableViewController
+@implementation APTableController
 
 
 - (void)realoadTableView {
