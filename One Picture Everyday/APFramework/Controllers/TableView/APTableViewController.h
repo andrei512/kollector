@@ -8,19 +8,18 @@
 
 #import "APController.h"
 #import "APTableSectionViewModel.h"
-#import "APTableViewCellViewModel.h"
-#import "APTableViewCell.h"
+#import "APTableCellViewModel.h"
+#import "APTableCell.h"
 
 @interface APTableViewController : APController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, weak) IBOutlet UIViewController *viewController;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *sections;
 
 - (int)numberOfSections;
 
-- (void)registerAndRealoadTableView;
+- (void)realoadTableView;
 
-- (APTableViewCellViewModel *)cellViewModelAtIndexPath:(NSIndexPath *)indexPath;
+- (APTableCellViewModel *)cellViewModelAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

@@ -10,6 +10,14 @@
 
 @implementation APTableSectionViewModel
 
++ (instancetype)sectionWithCells:(NSArray *)cells {
+    APTableSectionViewModel *section = [self new];
+    
+    section.cells = cells;
+    
+    return section;
+}
+
 - (int)numberOfCells {
     return self.cells.count;
 }

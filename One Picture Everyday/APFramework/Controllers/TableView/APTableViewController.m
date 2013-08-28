@@ -10,11 +10,17 @@
 
 @implementation APTableViewController
 
-- (void)registerAndRealoadTableView {
+- (void)realoadTableView {
     NSMutableSet *cellNibNames = [NSMutableSet set];
     for (APTableSectionViewModel *section in self.sections) {
-        for (APTableViewCellViewModel *cell in self.sections) {
+        for (APTableCellViewModel *cell in section.cells) {
             [cellNibNames addObject:cell.cellIdentifier];
+            if (cell.viewController == nil) {
+                cell.viewController = self.viewController;
+            }
+            if (cell.tableView == nil) {
+                cell.tableView = self.tableView;
+            }
         }
     }
     NSMutableDictionary *nibStash = [self instanceStashWithKey:@"nibStash"];
@@ -22,9 +28,9 @@
     for (NSString *cellNibName in cellNibNames) {
         if (nibStash[cellNibName] == nil) {
             nibStash[cellNibName] = [UINib nibWithNibName:cellNibName bundle:nil];
+            [self.tableView registerNib:nibStash[cellNibName]
+                 forCellReuseIdentifier:cellNibName];
         }
-        [self.tableView registerNib:nibStash[cellNibName]
-             forCellReuseIdentifier:cellNibName];
     }
     
     [self.tableView reloadData];
@@ -34,7 +40,7 @@
     return self.sections.count;
 }
 
-- (APTableViewCellViewModel *)cellViewModelAtIndexPath:(NSIndexPath *)indexPath {
+- (APTableCellViewModel *)cellViewModelAtIndexPath:(NSIndexPath *)indexPath {
     APTableSectionViewModel *section = self.sections[indexPath.section];
     return section.cells[indexPath.row];
 }
@@ -51,9 +57,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    APTableViewCellViewModel *cellViewModel = [self cellViewModelAtIndexPath:indexPath];
+    APTableCellViewModel *cellViewModel = [self cellViewModelAtIndexPath:indexPath];
     
-    APTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellViewModel.cellIdentifier];
+    APTableCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellViewModel.cellIdentifier];
     
     [cell loadViewModel:cellViewModel];
     
@@ -61,5 +67,12 @@
 }
 
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    APTableCellViewModel *cellViewModel = [self cellViewModelAtIndexPath:indexPath];
+    if (cellViewModel.onSelect != nil) {
+        cellViewModel.onSelect();
+    }
+}
 
 @end

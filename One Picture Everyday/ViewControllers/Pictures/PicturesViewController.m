@@ -21,7 +21,7 @@
     
     self.pictures = @[];
     for (int i = 0; i < 100; ++i) {
-        self.pictures = [self.pictures arrayByAddingObject:@"http://i.imgur.com/y54GYTO.png"];
+        self.pictures = [self.pictures arrayByAddingObject:@"http://i.imgur.com/uOUSG6O.jpg"];
     }
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"PictureCollectionViewCell"

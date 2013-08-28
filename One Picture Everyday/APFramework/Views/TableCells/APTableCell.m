@@ -1,0 +1,25 @@
+//
+//  TableViewCell.m
+//  kollector
+//
+//  Created by Andrei on 8/24/13.
+//  Copyright (c) 2013 Andrei. All rights reserved.
+//
+
+#import "APTableCell.h"
+
+@implementation APTableCell
+
+- (void)loadViewModel:(APTableCellViewModel *)viewModel {
+    // block based customization
+    if (viewModel.onLoad != nil) {
+        viewModel.onLoad(self);
+    }
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+}
+
+@end

@@ -13,10 +13,10 @@
 
 @interface CDEntry : NSManagedObject
 
-@property (nonatomic, retain) NSDate * createdAt;
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSData * extraInformation;
-@property (nonatomic, retain) NSString * note;
+@property (nonatomic, retain) NSDate *createdAt;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSData *extraInformation;
+@property (nonatomic, retain) NSString *note;
 @property (nonatomic, retain) CDPicture *picture;
 @property (nonatomic, retain) CDCollection *owner;
 

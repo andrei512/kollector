@@ -7,11 +7,13 @@
 //
 
 #import "APViewModel.h"
-#import "APTableViewCellViewModel.h"
+#import "APTableCellViewModel.h"
 
 @interface APTableSectionViewModel : APViewModel
 
 @property (nonatomic, strong) NSArray *cells;
+
++ (instancetype)sectionWithCells:(NSArray *)cells;
 
 - (int)numberOfCells;
 

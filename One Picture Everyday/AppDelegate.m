@@ -7,14 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "PicturesViewController.h"
+#import "MainViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    APViewController *viewController = [PicturesViewController viewController];
+    APViewController *viewController = [MainViewController viewController];
     
     self.viewController = viewController;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

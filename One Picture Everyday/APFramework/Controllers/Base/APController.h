@@ -12,7 +12,7 @@
 
 @interface APController : NSObject
 
-@property (nonatomic, weak) APViewController *viewController;
+@property (nonatomic, weak) IBOutlet APViewController *viewController;
 
 // main view for controller
 @property (nonatomic, weak) IBOutlet UIView *view;
