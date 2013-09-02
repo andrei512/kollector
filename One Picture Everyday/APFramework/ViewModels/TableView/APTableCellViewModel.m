@@ -21,4 +21,19 @@
     return [self new];
 }
 
+- (void)loadHash:(NSDictionary *)hash {
+    if (hash[kOnLoad]) {
+        self.onLoad = hash[kOnLoad];
+    }
+    if (hash[kOnSelect]) {
+        self.onSelect = hash[kOnSelect];
+    }
+    if (hash[kObject]) {
+        self.object = hash[kObject];
+    }
+    if (hash[kCellIdentifier]) {
+        self.cellIdentifier = hash[kCellIdentifier];
+    }
+}
+
 @end

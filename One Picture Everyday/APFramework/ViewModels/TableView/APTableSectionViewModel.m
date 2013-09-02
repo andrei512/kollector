@@ -27,6 +27,12 @@
     self.cells = [self.cells map:^id(id cell) {
         if ([cell isKindOfClass:[APTableCellViewModel class]] == YES) {
             return cell;
+        } else if ([cell isKindOfClass:[NSDictionary class]] == YES) {
+            APTableCellViewModel *hashCell = [APTableCellViewModel cellModel];
+            
+            [hashCell loadHash:(NSDictionary *)cell];
+            
+            return hashCell;
         } else {
             APTableCellViewModel *objectCellModel = [APTableCellViewModel cellModel];
             

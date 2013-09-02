@@ -11,6 +11,9 @@
 @implementation APTableCell
 
 - (void)loadViewModel:(APTableCellViewModel *)viewModel {
+    if (viewModel.object != nil) {
+        self.textLabel.text = [viewModel.object description];
+    }
     // block based customization
     if (viewModel.onLoad != nil) {
         viewModel.onLoad(self);

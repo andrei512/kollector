@@ -12,12 +12,18 @@
 typedef void(^APTableViewCellActionBlock)(APTableCell *);
 typedef void(^APTableViewActionBlock)(void);
 
+#define kOnLoad @"onLoad"
+#define kOnSelect @"onSelect"
+#define kObject @"object"
+#define kCellIdentifier @"cellIdentifier"
+
 @interface APTableCellViewModel : APViewModel
 
 @property (nonatomic, weak) APViewController *viewController;
 @property (nonatomic, weak) UITableView *tableView;
 
 @property (nonatomic, strong) NSString *cellIdentifier;
+@property (nonatomic, strong) id object;
 
 // blocks and magic
 
@@ -25,5 +31,7 @@ typedef void(^APTableViewActionBlock)(void);
 @property (nonatomic, copy) APTableViewActionBlock onSelect;
 
 + (instancetype)cellModel;
+
+- (void)loadHash:(NSDictionary *)hash;
 
 @end

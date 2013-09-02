@@ -63,6 +63,10 @@
             APTableSectionViewModel *arraySection = [APTableSectionViewModel sectionWithCells:(NSArray *)section];
             [arraySection normalizeData];
             return arraySection;
+        } else if ([section isKindOfClass:[NSDictionary class]] == YES) {
+            APTableSectionViewModel *hashCellSection = [APTableSectionViewModel sectionWithCells:@[section]];
+            [hashCellSection normalizeData];
+            return hashCellSection;
         } else {
             // ignore the fact that you don't have a section model or an array of cellModels
             // and just make a Section with one cell containing the object
