@@ -28,6 +28,7 @@
         frame.size.height = 100;
         cell.frame = frame;
     };
+    
     tableController.sections = @[
                                  @{
                                      kObject : @"ana",
@@ -44,98 +45,9 @@
                                          }
                                      ],
                                  @"mere",
-                                 @{
-                                     kObject : @"ana",
-                                     kOnSelect : ^{
-                                         PO(@"YOU TAPPED ANA ;)")
-                                     },
-                                     kOnLoad : makeTextRed
-                                     },
-                                 @[
-                                     @"are",
-                                     @{
-                                         kObject : @"multe",
-                                         kOnLoad : makeTextRed
-                                         }
-                                     ],
-                                 @"mere",
-                                 @{
-                                     kObject : @"ana",
-                                     kOnSelect : ^{
-                                         PO(@"YOU TAPPED ANA ;)")
-                                     },
-                                     kOnLoad : makeTextRed
-                                     },
-                                 @[
-                                     @"are",
-                                     @{
-                                         kObject : @"multe",
-                                         kOnLoad : makeTextRed
-                                         }
-                                     ],
-                                 @"mere",
-                                 @{
-                                     kObject : @"ana",
-                                     kOnSelect : ^{
-                                         PO(@"YOU TAPPED ANA ;)")
-                                     },
-                                     kOnLoad : makeTextRed
-                                     },
-                                 @[
-                                     @"are",
-                                     @{
-                                         kObject : @"multe",
-                                         kOnLoad : makeTextRed
-                                         }
-                                     ],
-                                 @"mere",
-                                 @{
-                                     kObject : @"ana",
-                                     kOnSelect : ^{
-                                         PO(@"YOU TAPPED ANA ;)")
-                                     },
-                                     kOnLoad : makeTextRed
-                                     },
-                                 @[
-                                     @"are",
-                                     @{
-                                         kObject : @"multe",
-                                         kOnLoad : makeTextRed
-                                         }
-                                     ],
-                                 @"mere",
-                                 @{
-                                     kObject : @"ana",
-                                     kOnSelect : ^{
-                                         PO(@"YOU TAPPED ANA ;)")
-                                     },
-                                     kOnLoad : makeTextRed
-                                     },
-                                 @[
-                                     @"are",
-                                     @{
-                                         kObject : @"multe",
-                                         kOnLoad : makeTextRed
-                                         }
-                                     ],
-                                 @"mere",
-                                 @{
-                                     kObject : @"ana",
-                                     kOnSelect : ^{
-                                         PO(@"YOU TAPPED ANA ;)")
-                                     },
-                                     kOnLoad : makeTextRed
-                                     },
-                                 @[
-                                     @"are",
-                                     @{
-                                         kObject : @"multe",
-                                         kOnLoad : makeTextRed
-                                         }
-                                     ],
-                                 @"mere"
     ];
 
+    
     
     
     [self addController:tableController

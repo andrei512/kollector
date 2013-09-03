@@ -24,19 +24,19 @@
             if (nibStash[cell.nibName] == nil) {
                 nibStash[cell.nibName] = [UINib nibWithNibName:cell.nibName bundle:nil];
             }
-
+            
+            // register the nib by the cell identifier
+            if ([registeredIdentifiers containsObject:cell.cellIdentifier] == NO) {
+                [self.tableView registerNib:nibStash[cell.nibName]
+                     forCellReuseIdentifier:cell.cellIdentifier];
+            }
+            
             // set view controller and table view references on table view
             if (cell.viewController == nil) {
                 cell.viewController = self.viewController;
             }
             if (cell.tableView == nil) {
                 cell.tableView = self.tableView;
-            }
-            
-            // register the nib by the cell identifier
-            if ([registeredIdentifiers containsObject:cell.cellIdentifier] == NO) {
-                [self.tableView registerNib:nibStash[cell.nibName]
-                     forCellReuseIdentifier:cell.cellIdentifier];
             }
         }
     }
