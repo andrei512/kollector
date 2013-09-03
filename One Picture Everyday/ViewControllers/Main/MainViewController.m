@@ -24,27 +24,124 @@
     
     APTableViewCellActionBlock makeTextRed = ^(APTableCell *cell) {
         cell.textLabel.textColor = [UIColor redColor];
+        CGRect frame = cell.frame;
+        frame.size.height = 100;
+        cell.frame = frame;
     };
-    
     tableController.sections = @[
-        @{
-            kObject : @"ana",
-            kOnSelect : ^{
-                PO(@"YOU TAPPED ANA ;)")
-            },
-            kOnLoad : makeTextRed
-        },
-        @[
-            @"are",
-            @{
-                kObject : @"multe",
-                kOnLoad : makeTextRed
-            }
-        ],
-        @"mere"
+                                 @{
+                                     kObject : @"ana",
+                                     kOnSelect : ^{
+                                         PO(@"YOU TAPPED ANA ;)")
+                                     },
+                                     kOnLoad : makeTextRed
+                                     },
+                                 @[
+                                     @"are",
+                                     @{
+                                         kObject : @"multe",
+                                         kOnLoad : makeTextRed
+                                         }
+                                     ],
+                                 @"mere",
+                                 @{
+                                     kObject : @"ana",
+                                     kOnSelect : ^{
+                                         PO(@"YOU TAPPED ANA ;)")
+                                     },
+                                     kOnLoad : makeTextRed
+                                     },
+                                 @[
+                                     @"are",
+                                     @{
+                                         kObject : @"multe",
+                                         kOnLoad : makeTextRed
+                                         }
+                                     ],
+                                 @"mere",
+                                 @{
+                                     kObject : @"ana",
+                                     kOnSelect : ^{
+                                         PO(@"YOU TAPPED ANA ;)")
+                                     },
+                                     kOnLoad : makeTextRed
+                                     },
+                                 @[
+                                     @"are",
+                                     @{
+                                         kObject : @"multe",
+                                         kOnLoad : makeTextRed
+                                         }
+                                     ],
+                                 @"mere",
+                                 @{
+                                     kObject : @"ana",
+                                     kOnSelect : ^{
+                                         PO(@"YOU TAPPED ANA ;)")
+                                     },
+                                     kOnLoad : makeTextRed
+                                     },
+                                 @[
+                                     @"are",
+                                     @{
+                                         kObject : @"multe",
+                                         kOnLoad : makeTextRed
+                                         }
+                                     ],
+                                 @"mere",
+                                 @{
+                                     kObject : @"ana",
+                                     kOnSelect : ^{
+                                         PO(@"YOU TAPPED ANA ;)")
+                                     },
+                                     kOnLoad : makeTextRed
+                                     },
+                                 @[
+                                     @"are",
+                                     @{
+                                         kObject : @"multe",
+                                         kOnLoad : makeTextRed
+                                         }
+                                     ],
+                                 @"mere",
+                                 @{
+                                     kObject : @"ana",
+                                     kOnSelect : ^{
+                                         PO(@"YOU TAPPED ANA ;)")
+                                     },
+                                     kOnLoad : makeTextRed
+                                     },
+                                 @[
+                                     @"are",
+                                     @{
+                                         kObject : @"multe",
+                                         kOnLoad : makeTextRed
+                                         }
+                                     ],
+                                 @"mere",
+                                 @{
+                                     kObject : @"ana",
+                                     kOnSelect : ^{
+                                         PO(@"YOU TAPPED ANA ;)")
+                                     },
+                                     kOnLoad : makeTextRed
+                                     },
+                                 @[
+                                     @"are",
+                                     @{
+                                         kObject : @"multe",
+                                         kOnLoad : makeTextRed
+                                         }
+                                     ],
+                                 @"mere"
     ];
 
-    [self addController:tableController withTranzition:[APControllerTranzition FadeTranzition]];
+    
+    
+    [self addController:tableController
+         withTransition:[[APControllerTransition SnapControllerView]
+                         chainedWith:[APControllerTransition FadeTransition]]
+     ];
     
     [tableController realoadTableView];
 }

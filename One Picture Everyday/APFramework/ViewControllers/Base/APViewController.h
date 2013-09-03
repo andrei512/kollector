@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "APController.h"
-#import "APControllerTranzition.h"
+#import "APControllerTransition.h"
 
 typedef void(^APDialogCallback)(int index);
 
@@ -25,8 +25,8 @@ typedef void(^APDialogCallback)(int index);
 - (void)addController:(APController *)controller animated:(BOOL)animated;
 - (void)removeController:(APController *)controller animated:(BOOL)animated;
 
-- (void)addController:(APController *)controller withTranzition:(APControllerTranzition *)tranzition;
-- (void)removeController:(APController *)controller withTranzition:(APControllerTranzition *)tranzition;
+- (void)addController:(APController *)controller withTransition:(APControllerTransition *)transition;
+- (void)removeController:(APController *)controller withTransition:(APControllerTransition *)transition;
 
 - (void)alert:(NSString *)message;
 - (void)error:(NSString *)message;

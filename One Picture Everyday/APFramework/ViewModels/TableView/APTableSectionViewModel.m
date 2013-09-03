@@ -31,6 +31,7 @@
             APTableCellViewModel *hashCell = [APTableCellViewModel cellModel];
             
             [hashCell loadHash:(NSDictionary *)cell];
+            hashCell.cellIdentifier = [NSString stringWithFormat:@"%d", (int)cell];
             
             return hashCell;
         } else {
@@ -41,6 +42,7 @@
             objectCellModel.onLoad = ^(APTableCell *cell) {
                 cell.textLabel.text = [NSString stringWithFormat:@"%@", object];
             };
+            objectCellModel.cellIdentifier = [NSString stringWithFormat:@"%d", (int)object];
             
             return objectCellModel;
         }
