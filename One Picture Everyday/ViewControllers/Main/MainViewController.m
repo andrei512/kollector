@@ -22,35 +22,39 @@
     self.title = @"Main";
 
     APTableController *tableController = [APTableController controllerForViewController:self];
-
-    APTableCellViewModel *firstCell = [APTableCellViewModel cellModel];
-    firstCell.object = @"first";
-    firstCell.onLoad = ^(APTableCell *cell) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    };
-    firstCell.onSelect = ^{
-        MainViewController *vc = [MainViewController viewController];
-        [self.navigationController pushViewController:vc animated:YES];
+    
+    APTableViewCellActionBlock makeTextRed = ^(APTableCell *cell) {
+        cell.textLabel.textColor = [UIColor redColor];
+        CGRect frame = cell.frame;
+        frame.size.height = 100;
+        cell.frame = frame;
     };
     
     tableController.sections = @[
-        firstCell,
-        @{
-            kObject : @"ana",
-            kOnSelect : ^{
-                [self.navigationController popViewControllerAnimated:YES];
-            }
-        },
-        @[@"are", @"multe"],
-        @{
-            kObject : @"mere",
-            kOnLoad : ^(APTableCell *cell) {
-                cell.textLabel.textColor = [UIColor redColor];
-            }
-        }
+                                 @{
+                                     kObject : @"ana",
+                                     kOnSelect : ^{
+                                         PO(@"YOU TAPPED ANA ;)")
+                                     },
+                                     kOnLoad : makeTextRed
+                                     },
+                                 @[
+                                     @"are",
+                                     @{
+                                         kObject : @"multe",
+                                         kOnLoad : makeTextRed
+                                         }
+                                     ],
+                                 @"mere",
     ];
 
-    [self addController:tableController withTranzition:[APControllerTranzition FadeTranzition]];
+    
+    
+    
+    [self addController:tableController
+         withTransition:[[APControllerTransition SnapControllerView]
+                         chainedWith:[APControllerTransition FadeTransition]]
+     ];
     
     [tableController realoadTableView];
 }

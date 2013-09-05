@@ -25,7 +25,7 @@
 		75D50C5F17C81BAE007A5D2B /* APViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D50C5D17C81BAE007A5D2B /* APViewController_iPad.xib */; };
 		75D50C6017C81BAE007A5D2B /* APViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D50C5E17C81BAE007A5D2B /* APViewController_iPhone.xib */; };
 		75D50C6217C8D727007A5D2B /* APModel.magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C6117C8D727007A5D2B /* APModel.magic.m */; };
-		75D50C6917C8E022007A5D2B /* APControllerTranzition.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C6817C8E022007A5D2B /* APControllerTranzition.m */; };
+		75D50C6917C8E022007A5D2B /* APControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C6817C8E022007A5D2B /* APControllerTransition.m */; };
 		75D50C6D17C8E04A007A5D2B /* APFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C6C17C8E04A007A5D2B /* APFunction.m */; };
 		75D50C7117C955ED007A5D2B /* APModel.m.magic in Resources */ = {isa = PBXBuildFile; fileRef = 75D50C7017C955ED007A5D2B /* APModel.m.magic */; };
 		75D50C7A17CA3D07007A5D2B /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C7817CA3D07007A5D2B /* Models.xcdatamodeld */; };
@@ -94,8 +94,8 @@
 		75D50C5E17C81BAE007A5D2B /* APViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APViewController_iPhone.xib; sourceTree = "<group>"; };
 		75D50C6117C8D727007A5D2B /* APModel.magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APModel.magic.m; sourceTree = "<group>"; };
 		75D50C6317C8D785007A5D2B /* APModel.magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APModel.magic.h; sourceTree = "<group>"; };
-		75D50C6717C8E022007A5D2B /* APControllerTranzition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APControllerTranzition.h; sourceTree = "<group>"; };
-		75D50C6817C8E022007A5D2B /* APControllerTranzition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APControllerTranzition.m; sourceTree = "<group>"; };
+		75D50C6717C8E022007A5D2B /* APControllerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APControllerTransition.h; sourceTree = "<group>"; };
+		75D50C6817C8E022007A5D2B /* APControllerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APControllerTransition.m; sourceTree = "<group>"; };
 		75D50C6B17C8E04A007A5D2B /* APFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APFunction.h; sourceTree = "<group>"; };
 		75D50C6C17C8E04A007A5D2B /* APFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APFunction.m; sourceTree = "<group>"; };
 		75D50C7017C955ED007A5D2B /* APModel.m.magic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = APModel.m.magic; sourceTree = "<group>"; };
@@ -468,8 +468,8 @@
 		75D50C6617C8DFFC007A5D2B /* APControllerTranzition */ = {
 			isa = PBXGroup;
 			children = (
-				75D50C6717C8E022007A5D2B /* APControllerTranzition.h */,
-				75D50C6817C8E022007A5D2B /* APControllerTranzition.m */,
+				75D50C6717C8E022007A5D2B /* APControllerTransition.h */,
+				75D50C6817C8E022007A5D2B /* APControllerTransition.m */,
 			);
 			path = APControllerTranzition;
 			sourceTree = "<group>";
@@ -757,7 +757,7 @@
 				75D50C5917C80A0F007A5D2B /* APFramework.m in Sources */,
 				75D50C5C17C81583007A5D2B /* APCollectionViewCell.m in Sources */,
 				75D50C6217C8D727007A5D2B /* APModel.magic.m in Sources */,
-				75D50C6917C8E022007A5D2B /* APControllerTranzition.m in Sources */,
+				75D50C6917C8E022007A5D2B /* APControllerTransition.m in Sources */,
 				75D50C6D17C8E04A007A5D2B /* APFunction.m in Sources */,
 				75D50C7A17CA3D07007A5D2B /* Models.xcdatamodeld in Sources */,
 				75D50C7D17CA4100007A5D2B /* CDPicture.m in Sources */,

@@ -13,6 +13,7 @@
 - (id)init {
     if (self = [super init]) {
         self.cellIdentifier = [[self className] stringByRemovingSuffix:@"ViewModel"];
+        self.nibName = self.cellIdentifier;
     }
     return self;
 }

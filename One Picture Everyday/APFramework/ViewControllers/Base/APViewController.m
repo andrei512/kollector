@@ -69,7 +69,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Controllers And Tranzition
+#pragma mark - Controllers And Transitions
 
 - (void)addController:(APController *)controller {
     [self addController:controller animated:NO];
@@ -82,35 +82,35 @@
 - (void)addController:(APController *)controller animated:(BOOL)animated {
     if (animated) {
         [self addController:controller
-             withTranzition:[APControllerTranzition FadeTranzition]];
+             withTransition:[APControllerTransition FadeTransition]];
     } else {
         [self addController:controller
-             withTranzition:[APControllerTranzition NonAnimatedTranzition]];
+             withTransition:[APControllerTransition NonAnimatedTransition]];
     }
 }
 
 - (void)removeController:(APController *)controller animated:(BOOL)animated {
     if (animated) {
         [self removeController:controller
-             withTranzition:[APControllerTranzition FadeTranzition]];
+             withTransition:[APControllerTransition FadeTransition]];
     } else {
         [self removeController:controller
-             withTranzition:[APControllerTranzition NonAnimatedTranzition]];
+             withTransition:[APControllerTransition NonAnimatedTransition]];
     }    
 }
 
-- (void)addController:(APController *)controller withTranzition:(APControllerTranzition *)tranzition {
+- (void)addController:(APController *)controller withTransition:(APControllerTransition *)transition {
     [self.controllers addObject:controller];
     controller.viewController = self;
 
-    [tranzition add:controller to:self];
+    [transition add:controller to:self];
 }
 
-- (void)removeController:(APController *)controller withTranzition:(APControllerTranzition *)tranzition {
+- (void)removeController:(APController *)controller withTransition:(APControllerTransition *)transition {
     controller.viewController = nil;
     [self.controllers removeObject:controller];
 
-    [tranzition remove:controller from:self];
+    [transition remove:controller from:self];
 }
 
 

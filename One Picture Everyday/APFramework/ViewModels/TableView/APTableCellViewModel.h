@@ -16,6 +16,7 @@ typedef void(^APTableViewActionBlock)(void);
 #define kOnSelect @"onSelect"
 #define kObject @"object"
 #define kCellIdentifier @"cellIdentifier"
+#define kNibName @"nibName"
 
 @interface APTableCellViewModel : APViewModel
 
@@ -23,6 +24,7 @@ typedef void(^APTableViewActionBlock)(void);
 @property (nonatomic, weak) UITableView *tableView;
 
 @property (nonatomic, strong) NSString *cellIdentifier;
+@property (nonatomic, strong) NSString *nibName;
 @property (nonatomic, strong) id object;
 
 // blocks and magic

@@ -14,10 +14,24 @@
 - (void)realoadTableView {
     [self normalizeData];
     
-    NSMutableSet *cellNibNames = [NSMutableSet set];
+    NSMutableDictionary *nibStash = [self instanceStashWithKey:@"nibStash"];
+    
+    NSMutableSet *registeredIdentifiers = [NSMutableSet set];
+    
     for (APTableSectionViewModel *section in self.sections) {
         for (APTableCellViewModel *cell in section.cells) {
-            [cellNibNames addObject:cell.cellIdentifier];
+            // create nib if it does not exist
+            if (nibStash[cell.nibName] == nil) {
+                nibStash[cell.nibName] = [UINib nibWithNibName:cell.nibName bundle:nil];
+            }
+            
+            // register the nib by the cell identifier
+            if ([registeredIdentifiers containsObject:cell.cellIdentifier] == NO) {
+                [self.tableView registerNib:nibStash[cell.nibName]
+                     forCellReuseIdentifier:cell.cellIdentifier];
+            }
+            
+            // set view controller and table view references on table view
             if (cell.viewController == nil) {
                 cell.viewController = self.viewController;
             }
@@ -26,15 +40,7 @@
             }
         }
     }
-    NSMutableDictionary *nibStash = [self instanceStashWithKey:@"nibStash"];
-    
-    for (NSString *cellNibName in cellNibNames) {
-        if (nibStash[cellNibName] == nil) {
-            nibStash[cellNibName] = [UINib nibWithNibName:cellNibName bundle:nil];
-            [self.tableView registerNib:nibStash[cellNibName]
-                 forCellReuseIdentifier:cellNibName];
-        }
-    }
+
     
     [self.tableView reloadData];
 }
@@ -106,6 +112,11 @@
     if (cellViewModel.onSelect != nil) {
         cellViewModel.onSelect();
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    APTableCell *cell = (APTableCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.frame.size.height;
 }
 
 @end
