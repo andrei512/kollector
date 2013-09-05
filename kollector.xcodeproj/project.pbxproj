@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E2772E2645E4178A41523C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 701F7223A2984AB19AC8B020 /* libPods.a */; };
+		757A7CC317D9182F00AC4B4B /* NSObject+APLisp.m in Sources */ = {isa = PBXBuildFile; fileRef = 757A7CC217D9182F00AC4B4B /* NSObject+APLisp.m */; };
 		75D50BF417C7FD71007A5D2B /* kollector-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D50BF317C7FD71007A5D2B /* kollector-Info.plist */; };
 		75D50C2F17C80574007A5D2B /* NSObject+APFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C2E17C80574007A5D2B /* NSObject+APFramework.m */; };
 		75D50C3217C8059C007A5D2B /* UIView+APFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D50C3117C8059C007A5D2B /* UIView+APFramework.m */; };
@@ -62,6 +63,8 @@
 /* Begin PBXFileReference section */
 		532A57E06D7D4BB0BC8F31A3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		701F7223A2984AB19AC8B020 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		757A7CC117D9182E00AC4B4B /* NSObject+APLisp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+APLisp.h"; sourceTree = "<group>"; };
+		757A7CC217D9182F00AC4B4B /* NSObject+APLisp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+APLisp.m"; sourceTree = "<group>"; };
 		75D50BF317C7FD71007A5D2B /* kollector-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "kollector-Info.plist"; sourceTree = "<group>"; };
 		75D50C2D17C80574007A5D2B /* NSObject+APFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+APFramework.h"; sourceTree = "<group>"; };
 		75D50C2E17C80574007A5D2B /* NSObject+APFramework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+APFramework.m"; sourceTree = "<group>"; };
@@ -158,6 +161,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		757A7CC017D9180800AC4B4B /* Lisp */ = {
+			isa = PBXGroup;
+			children = (
+				757A7CC117D9182E00AC4B4B /* NSObject+APLisp.h */,
+				757A7CC217D9182F00AC4B4B /* NSObject+APLisp.m */,
+			);
+			path = Lisp;
+			sourceTree = "<group>";
+		};
 		75D50BFD17C8015D007A5D2B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +270,7 @@
 		75D50C1B17C80550007A5D2B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				757A7CC017D9180800AC4B4B /* Lisp */,
 				75D50C2D17C80574007A5D2B /* NSObject+APFramework.h */,
 				75D50C2E17C80574007A5D2B /* NSObject+APFramework.m */,
 				75D50C5717C80A0E007A5D2B /* APFramework.h */,
@@ -757,6 +770,7 @@
 				75DC96FB17CD309600C28339 /* PictureCollectionViewCell.m in Sources */,
 				75DC970417CD393300C28339 /* Picture.m in Sources */,
 				75F6A3D417CE2FC100802E81 /* MainViewController.m in Sources */,
+				757A7CC317D9182F00AC4B4B /* NSObject+APLisp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

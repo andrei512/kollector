@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#import "NSObject+APLisp.h"
+
 #import <CoreData+MagicalRecord.h>
 #import <ReactiveCocoa.h>
 #import <APUtils.h>
@@ -27,7 +30,7 @@
 #import "APCollectionViewController.h"
 #import "APTableController.h"
 
-#define PO(x) NSLog(@"%s:%d %@", __PRETTY_FUNCTION__, __LINE__, x);
+#define PO(x) NSLog(@"%s:%d %s = %@", __PRETTY_FUNCTION__, __LINE__, #x, x);
 #define LOG_LINE NSLog(@"%s:%d", __PRETTY_FUNCTION__, __LINE__);
 
 @interface APFramework : NSObject

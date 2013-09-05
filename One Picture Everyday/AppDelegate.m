@@ -9,16 +9,51 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    [self performBlock:^{
+        PO(c0ntext)
+        PO(this)
+        PO(param)
+        PO(params)
+    }];
+    
+    PO(resu1t)
+
+    [@1337 performBlock:^{
+        PO(c0ntext)
+        PO(this)
+        PO(param)
+        PO(params)
+    }];
+    
+    PO(resu1t)
+    
+    [@123 performBlock:^{
+        PO(c0ntext)
+        PO(this)
+        PO(param)
+        PO(params)
+    }
+                  with:@[@"ana", @"are", @"mere"]];
+    
+    NSArray *a = @[@111, @222, @333];
+    
+    kollect(a, ^{
+        PO(this)
+    });
+    
+
     APViewController *viewController = [MainViewController viewController];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     self.viewController = viewController;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.viewController;
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
     return YES;

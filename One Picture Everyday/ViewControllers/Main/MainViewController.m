@@ -19,29 +19,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Main";
 
     APTableController *tableController = [APTableController controllerForViewController:self];
-    
-    APTableViewCellActionBlock makeTextRed = ^(APTableCell *cell) {
-        cell.textLabel.textColor = [UIColor redColor];
+
+    APTableCellViewModel *firstCell = [APTableCellViewModel cellModel];
+    firstCell.object = @"first";
+    firstCell.onLoad = ^(APTableCell *cell) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    };
+    firstCell.onSelect = ^{
+        MainViewController *vc = [MainViewController viewController];
+        [self.navigationController pushViewController:vc animated:YES];
     };
     
     tableController.sections = @[
+        firstCell,
         @{
             kObject : @"ana",
             kOnSelect : ^{
-                PO(@"YOU TAPPED ANA ;)")
-            },
-            kOnLoad : makeTextRed
-        },
-        @[
-            @"are",
-            @{
-                kObject : @"multe",
-                kOnLoad : makeTextRed
+                [self.navigationController popViewControllerAnimated:YES];
             }
-        ],
-        @"mere"
+        },
+        @[@"are", @"multe"],
+        @{
+            kObject : @"mere",
+            kOnLoad : ^(APTableCell *cell) {
+                cell.textLabel.textColor = [UIColor redColor];
+            }
+        }
     ];
 
     [self addController:tableController withTranzition:[APControllerTranzition FadeTranzition]];
