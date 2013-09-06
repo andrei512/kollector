@@ -22,6 +22,10 @@ int main(int argc, char *argv[])
 
         }
         @catch (NSException *exception) {
+            NSLog(@"==================================");
+            NSLog(@"Stack Trace");
+            NSLog(@"==================================");
+            
             NSLog(@"%@", [NSObject stackForCurrentThread]);
             NSLog(@"==================================\n%@", exception);
             return -1;

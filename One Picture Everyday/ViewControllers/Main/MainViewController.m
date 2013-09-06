@@ -57,6 +57,12 @@
      ];
     
     [tableController realoadTableView];
+    
+    [tableController performBlockwithParams:@[@"hello"]
+                    onContextKey:@"^.*view$"
+                           block:^{
+                               PO(this)
+                           }];
 }
 
 

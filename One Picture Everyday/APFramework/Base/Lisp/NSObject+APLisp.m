@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+APLisp.h"
+#import <NSString+APUtils.h>
 
 @implementation NSObject (APLisp)
 
@@ -28,6 +29,11 @@
     [[NSObject stackForCurrentThread] addObject:[NSMutableDictionary dictionary]];
 }
 
+- (void)pushContext:(NSMutableDictionary *)context {
+    [[NSObject stackForCurrentThread] addObject:context];
+}
+
+
 - (void)popContext {
     [[NSObject stackForCurrentThread] removeLastObject];
 }
@@ -41,10 +47,15 @@
 }
 
 - (void)performBlock:(id)block with:(NSArray *)_params {
+    // push a empty context to the stack
+    [self performBlock:block withParams:_params andContext:[NSMutableDictionary dictionary]];
+}
+
+- (void)performBlock:(id)block withParams:(NSArray *)_params andContext:(NSMutableDictionary *)context {
     @try {
         ThisBlock thisBlock = (ThisBlock)block;
         if (thisBlock != nil) {
-            [self pushContext];
+            [self pushContext:context];
             
             this = self;
             params = _params ?: @[];
@@ -62,6 +73,46 @@
                               userInfo:@{}] raise];
     }
 }
+
+
+- (void)performBlockwithParams:(NSArray *)_params
+                    andContext:(NSMutableDictionary *)context
+                      andBlock:(id)block
+                  onContextKey:(NSString *)key {
+}
+
+- (void)performBlockWithParams:(NSArray *)_params
+                         block:(id)block {
+    [self performBlock:block with:_params];
+}
+
+#pragma mark - Regex invoke
+
+- (void)performBlockwithParams:(NSArray *)_params
+                    andContext:(NSMutableDictionary *)context
+                  onContextKey:(NSString *)key
+                         block:(id)block {
+    for (NSString *contextKey in [[context allKeys] copy]) {
+        PO(contextKey)
+        PO(key)
+
+        if ([contextKey matches:key]) {
+            [context[contextKey] performBlock:block withParams:_params andContext:context];
+        }
+    }
+}
+
+- (void)performBlockwithParams:(NSArray *)_params
+                  onContextKey:(NSString *)key
+                         block:(id)block {
+    // THIS ONE !!!
+    [self performBlockwithParams:_params
+                      andContext:self.bindings
+                    onContextKey:key
+                           block:block];
+}
+
+
 
 + (void)_ret:(id)a_result {
     NSMutableArray *stack = [NSObject stackForCurrentThread];

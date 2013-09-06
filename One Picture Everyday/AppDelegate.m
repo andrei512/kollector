@@ -15,38 +15,41 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [self performBlock:^{
-        PO(c0ntext)
-        PO(this)
-        PO(param)
-        PO(params)
-    }];
-    
-    PO(resu1t)
-
-    [@1337 performBlock:^{
-        PO(c0ntext)
-        PO(this)
-        PO(param)
-        PO(params)
-    }];
-    
-    PO(resu1t)
-    
-    [@123 performBlock:^{
-        PO(c0ntext)
-        PO(this)
-        PO(param)
-        PO(params)
-    }
-                  with:@[@"ana", @"are", @"mere"]];
-    
-    NSArray *a = @[@111, @222, @333];
-    
-    kollect(a, ^{
-        PO(this)
-    });
-    
+//    [self performBlock:^{
+//        PO(c0ntext)
+//        PO(this)
+//        PO(param)
+//        PO(params)
+//    }];
+//    
+//    PO(resu1t)
+//
+//    [@1337 performBlock:^{
+//        PO(c0ntext)
+//        PO(this)
+//        PO(param)
+//        PO(params)
+//    }];
+//    
+//    PO(resu1t)
+//    
+//    [@123 performBlock:^{
+//        PO(c0ntext)
+//        PO(this)
+//        PO(param)
+//        PO(params)
+//    }
+//                  with:@[@"ana", @"are", @"mere"]];
+//    
+//    NSArray *a = @[@111, @222, @333];
+//    
+//    NSArray *x = kollect(a, ^{
+//        as(NSNumber)
+//        ret(@(object.intValue * 2))
+//    });
+//    
+//    PO(x)
+// 
 
     APViewController *viewController = [MainViewController viewController];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
