@@ -15,17 +15,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-//    [self performBlock:^{
-//        PO(c0ntext)
-//        PO(this)
-//        PO(param)
-//        PO(params)
-//    }];
-//    
-//    PO(resu1t)
+    [self performBlock:^{
+        nam3 = @"Hello";
+        PO(conteXt)
+        PO(this)
+        PO(param)
+        PO(params)
+        
+    }];
+    
+    PO(resu1t)
 //
 //    [@1337 performBlock:^{
-//        PO(c0ntext)
+//        PO(conteXt)
 //        PO(this)
 //        PO(param)
 //        PO(params)
@@ -34,7 +36,7 @@
 //    PO(resu1t)
 //    
 //    [@123 performBlock:^{
-//        PO(c0ntext)
+//        PO(conteXt)
 //        PO(this)
 //        PO(param)
 //        PO(params)
@@ -50,7 +52,24 @@
 //    
 //    PO(x)
 // 
+    [self performBlockwithParams:@[]
+                      andContext:self.bindings
+                    onContextKey:@".*Label"
+                           block:^{
+                               
+                           }];
 
+    ranGe(1, 10).do(^{
+        PO(this)
+    });
+    
+    ThisBlock rangeBlock = ^{
+        for (int i = a; i <= b; ++i) {
+            yield(@(i))
+        }
+    }
+    
+    
     APViewController *viewController = [MainViewController viewController];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     

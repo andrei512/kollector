@@ -1,6 +1,6 @@
 //
 //  MainViewController.h
-//  kollector
+//  APFramework
 //
 //  Created by Andrei Puni on 8/28/13.
 //  Copyright (c) 2013 Andrei. All rights reserved.

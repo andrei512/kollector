@@ -1,6 +1,6 @@
 //
 //  CDAlert.m
-//  kollector
+//  APFramework
 //
 //  Created by Andrei on 8/25/13.
 //  Copyright (c) 2013 Andrei. All rights reserved.
